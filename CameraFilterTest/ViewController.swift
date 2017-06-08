@@ -111,7 +111,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         for i in 0..<6 {
             
             if indexPath.item * 6 + i >= self.filters!.count {
-                break
+                
+                labels[i]?.isHidden = true
+                sliders[i]?.isHidden = true
+                
+                continue
             }
             
             if let filter = self.filters?[indexPath.item * 6 + i] {
